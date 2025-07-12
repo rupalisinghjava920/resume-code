@@ -82,67 +82,111 @@
     }
 } */
 
-@media print {
-    .list-inline-item {
-        background-color: transparent !important;
-        color: black !important;
-        border: none !important;
-        padding: 0 !important;
-        margin: 0 10px 5px 0 !important;
-        display: inline-block;
-        font-size: 14px;
-    }
+        @media print {
+            .list-inline-item {
+                background-color: transparent !important;
+                color: black !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 10px 5px 0 !important;
+                display: inline-block;
+                font-size: 14px;
+            }
 
-    .section-title {
-        color: black !important;
-        border-color: #000 !important;
-    }
+            .section-title {
+                color: black !important;
+                border-color: #000 !important;
+            }
 
-    body, .container {
-        background: white !important;
-        color: black !important;
-        print-color-adjust: exact !important;
-        -webkit-print-color-adjust: exact !important;
-    }
+            body,
+            .container {
+                background: white !important;
+                color: black !important;
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+            }
 
-    a {
-        color: black !important;
-        text-decoration: none !important;
-    }
+            a {
+                color: black !important;
+                text-decoration: none !important;
+            }
 
-    .text-warning {
-        color: black !important;
-    }
-}
+            .text-warning {
+                color: black !important;
+            }
+        }
 
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 1rem;
-    }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1rem;
+            }
 
-    h2.fw-bold {
-        font-size: 1.5rem;
-    }
+            h2.fw-bold {
+                font-size: 1.5rem;
+            }
 
-    .list-inline-item {
-        font-size: 15px;
-        padding: 3px 8px;
-    }
+            .list-inline-item {
+                font-size: 15px;
+                padding: 3px 8px;
+            }
 
-    body {
-        padding: 1rem;
-    }
+            body {
+                padding: 1rem;
+            }
 
-    .container {
-        padding: 1rem;
-    }
+            .container {
+                padding: 1rem;
+            }
 
-    .text-warning {
-        font-size: 1rem;
-    }
-}
+            .text-warning {
+                font-size: 1rem;
+            }
+        }
 
+        .skill-badge {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000;
+            border-radius: 4px;
+            padding: 4px 10px;
+            margin: 5px 5px 5px 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
+        @media print {
+            .skill-badge {
+                background-color: transparent !important;
+                color: black !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 8px 5px 0 !important;
+                font-size: 13px;
+            }
+        }
+
+        .language-level {
+            display: inline-block;
+            font-size: 18px;
+            letter-spacing: 5px;
+            vertical-align: middle;
+            color: #f8f9fa;
+        }
+
+        .language-dot {
+            color: #ffc107;
+            /* Yellow */
+        }
+
+        .language-dot.inactive {
+            color: #6c757d;
+            /* Grey */
+        }
+
+        .language-label {
+            font-weight: 600;
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -234,15 +278,30 @@
 
             <section>
                 <div class="section-title">Languages</div>
-                <ul>
-                    <li><strong>Hindi:</strong> Native &nbsp;
-                        <span class="text-warning">● ● ● ● ●</span>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li>
+                        <span class="language-label">Hindi:</span> Native
+                        <span class="language-level">
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                        </span>
                     </li>
-                    <li><strong>English:</strong> Advanced &nbsp;
-                        <span class="text-warning">● ● ● ○ ○</span>
+                    <li>
+                        <span class="language-label">English:</span> Advanced
+                        <span class="language-level">
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                            <span class="language-dot">●</span>
+                            <span class="language-dot inactive">●</span>
+                            <span class="language-dot inactive">●</span>
+                        </span>
                     </li>
                 </ul>
             </section>
+
 
             <section>
                 <div class="section-title">Projects</div>
@@ -251,35 +310,56 @@
                     <i class="bi bi-geo-alt-fill text-warning"></i> Noida
                 </p>
                 <ul>
-                    <li>Developed a comprehensive E-commerce web application using Spring Boot, Thymeleaf, MySQL, and
-                        Spring Security.</li>
-                    <li>Implemented user registration/login with OAuth, securing admin/user authorization.</li>
-                    <li>Admin panel to manage products and categories with full CRUD functionality.</li>
-                    <li>Product search by name/category and cart features (add/remove before checkout).</li>
-                    <li>Frontend built with React.js, CSS, and Bootstrap for responsive design.</li>
+                    <li>
+                        I developed a comprehensive E-commerce web application using Spring Boot, Thymeleaf, MySQL, and
+                        Spring Security for user authentication and authorization.
+                    </li>
+                    <li>
+                        The application features a user registration and login system with OAuth for secure access. I
+                        integrated Spring Security to ensure proper authentication and authorization for users and
+                        admins.
+                    </li>
+                    <li>
+                        The system includes an admin panel where administrators can manage categories and products with
+                        full CRUD (Create, Read, Update, Delete) operations.
+                    </li>
+                    <li>
+                        Users can browse all products, add products to the cart, and remove products from the cart
+                        before proceeding to checkout.
+                    </li>
+                    <li>
+                        I also implemented a product search functionality, allowing users to easily find products by
+                        name or category.
+                    </li>
+                    <li>
+                        On the frontend, I used React.js, CSS, and Bootstrap to build responsive, user-friendly pages
+                        for the login, registration, product catalog, cart, and admin panel.
+                    </li>
                 </ul>
             </section>
 
+
             <section>
                 <div class="section-title">Skills</div>
-                <ul class="list-inline">
-                    <li class="list-inline-item">Spring Boot</li>
-                    <li class="list-inline-item">React.js</li>
-                    <li class="list-inline-item">Java</li>
-                    <li class="list-inline-item">Hibernate</li>
-                    <li class="list-inline-item">JPA</li>
-                    <li class="list-inline-item">MySQL</li>
-                    <li class="list-inline-item">Rest API</li>
-                    <li class="list-inline-item">CSS</li>
-                    <li class="list-inline-item">Bootstrap</li>
-                    <li class="list-inline-item">HTML</li>
-                    <li class="list-inline-item">IntelliJ IDEA</li>
-                    <li class="list-inline-item">GIT</li>
-                    <li class="list-inline-item">J2EE</li>
-                    <li class="list-inline-item">JavaScript</li>
-                    <li class="list-inline-item">Postman</li>
-                </ul>
+                <div>
+                    <span class="skill-badge">Spring Boot</span>
+                    <span class="skill-badge">React.js</span>
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">Hibernate</span>
+                    <span class="skill-badge">JPA</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">Rest API</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">IntelliJ IDEA</span>
+                    <span class="skill-badge">GIT</span>
+                    <span class="skill-badge">J2EE</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">Postman</span>
+                </div>
             </section>
+
 
     </div>
 </body>
